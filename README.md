@@ -241,6 +241,11 @@ curl -X POST http://127.0.0.1:8000/api/v1/chat \
 # }
 ```
 
+## ⚠️ Troubleshooting
+1. **429 Resource Exhausted**: This means the Google Gemini free tier quota has been reached. The system is designed to handle this gracefully via the fallback chain, but heavy load may still trigger it. Wait 60 seconds and retry.
+
+2. **ChromaDB Errors**: If you encounter SQLite errors, delete the data/chroma_db folder and restart the server. The database will regenerate on the next upload.
+
 ---
 
 ## License
